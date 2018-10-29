@@ -367,6 +367,7 @@ inline int64_t int_divide(int64_t a, uint32_t b) {
     return a / b;
 # endif
 }
+#endif
 
 
 /** @brief Multiply @a a * @a b, placing the low-order bits of the result in @a xlow
@@ -436,6 +437,7 @@ inline int32_t int_divide(int32_t a, uint32_t b, int32_t &quot) {
     return a - quot * b;
 }
 
+#if HAVE_INT64_TYPES
 /** @overload */
 inline uint32_t int_divide(uint64_t a, uint32_t b, uint64_t &quot) {
 # if CLICK_LINUXMODULE && BITS_PER_LONG < 64
